@@ -1,0 +1,22 @@
+html {
+  --image-width: 5rem;
+  --image-height: var(--image-width);
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+#image-container {
+  display: grid;
+  grid-template-columns: repeat(4, var(--image-width));
+  grid-template-rows: repeat(4, var(--image-width));
+  column-gap: calc(var(--image-width) / 2);
+  row-gap: calc(var(--image-width) / 2);
+}
+
+svg {
+  height: var(--image-height);
+  width: var(--image-width);
+}
