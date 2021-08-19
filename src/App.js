@@ -120,15 +120,24 @@ const App = () => {
   };
 
   return (
-    <div id="image-container">
-      {randomizeImageArray().map((svg, index) => {
-        // console.log(svg);
-        return (
-          <div className="images" key={index}>
-            <button onClick={incrementCount}>{svg}</button>
-          </div>
-        );
-      })}
+    <div id="app-container">
+      <header>
+        <div id="header-left">
+          <h1>Techie Thingies</h1>
+          <h2>A memory game.</h2>
+        </div>
+        <div id="header-right">Scoreboard</div>
+      </header>
+      <div id="image-container">
+        {randomizeImageArray().map((svg, index) => {
+          // console.log(svg);
+          return (
+            <div className="images" key={index}>
+              <button onClick={incrementCount}>{svg}</button>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

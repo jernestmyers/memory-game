@@ -3,13 +3,43 @@ html {
   --image-height: var(--image-width);
 }
 
-#root {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  padding: 1rem 0;
+  width: 100%;
   display: flex;
+  justify-content: space-between;
+}
+
+#header-left {
+  margin-left: 2rem;
+}
+
+#header-right {
+  margin-right: 2rem;
+}
+
+#app-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 #image-container {
   display: grid;
+  width: calc(var(--image-width) * 5.625);
+  height: calc(var(--image-width) * 5.625);
   grid-template-columns: repeat(4, var(--image-width));
   grid-template-rows: repeat(4, var(--image-width));
   column-gap: calc(var(--image-width) / 2);
@@ -19,4 +49,8 @@ html {
 svg {
   height: var(--image-height);
   width: var(--image-width);
+}
+
+button {
+  border: none;
 }
