@@ -1,0 +1,50 @@
+#help-modal-container {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: 1.5rem;
+  width: 300px;
+  overflow: auto;
+  background-color: #fdebef;
+}
+
+#help-modal-content {
+  opacity: 95%;
+  margin: 0 auto;
+  padding: 0.5rem;
+  width: 250px;
+  max-width: 100%;
+}
+
+#help-modal-btn-container,
+#modal-header {
+  text-align: center;
+}
+
+.modal-btn {
+  background-color: #f2869f;
+  color: white;
+  font-weight: bold;
+  height: 2.5rem;
+  width: auto;
+  padding: 0 1rem;
+}
+
+.modal-btn:hover {
+  background-color: #cf7397;
+}
+
+.modal-btn:active {
+  background-color: #4a2040;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+  padding: 0.5rem 0rem;
+}

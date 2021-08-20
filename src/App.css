@@ -22,6 +22,26 @@ header {
 
 #header-left {
   margin-left: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(3, auto);
+}
+
+#help-container {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  margin-top: 0.25rem;
+  justify-content: center;
+  align-items: center;
+  color: #cf7397;
+}
+
+#logo {
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+  padding-right: 0.5rem;
+  align-self: center;
 }
 
 #header-right {
@@ -46,11 +66,26 @@ header {
   row-gap: calc(var(--image-width) / 2);
 }
 
+.images {
+  width: auto;
+  height: auto;
+}
+
 svg {
   height: var(--image-height);
   width: var(--image-width);
 }
 
+#help-icon {
+  height: 15px;
+  width: 15px;
+  padding-right: 0.25rem;
+}
+
 button {
   border: none;
+}
+
+.toggle-modal {
+  display: none;
 }
