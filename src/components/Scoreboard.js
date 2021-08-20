@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/Scoreboard.css";
+import "../styles/Scoreboard.css";
 
 const Scoreboard = (props) => {
   return (
@@ -11,7 +11,7 @@ const Scoreboard = (props) => {
       </div>
       <div className="display-score">
         <h4>Best:</h4>
-        <h4>{props.currentScore} / 16</h4>
+        <h4>{props.highScore} / 16</h4>
       </div>
     </div>
   );
