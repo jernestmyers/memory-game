@@ -10,16 +10,7 @@ const HelpModal = (props) => {
           <li>Are you clever enough to click all 16 icons?</li>
         </ul>
         <div id="help-modal-btn-container">
-          <button
-            className="modal-btn"
-            onClick={() => {
-              document.querySelector(
-                `#help-modal-container`
-              ).style.display = `none`;
-            }}
-          >
-            CONTINUE
-          </button>
+          <small id="click-continue-msg">CLICK ANYWHERE TO CONTINUE</small>
         </div>
       </div>
     </div>

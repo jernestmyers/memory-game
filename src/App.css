@@ -39,7 +39,7 @@ header {
   display: flex;
   height: 20px;
   position: relative;
-  cursor: pointer;
+  cursor: default;
   margin-top: 0.25rem;
   justify-content: center;
   align-items: center;
@@ -84,6 +84,11 @@ header {
 svg {
   height: var(--image-height);
   width: var(--image-width);
+}
+
+.icon-btns {
+  display: flex;
+  align-items: center;
 }
 
 .icon-btns:hover {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Scoreboard from "./components/Scoreboard";
 import Game from "./components/Game";
+import GameRefactor from "./components/GameRefactor";
 import HelpModal from "./components/HelpModal";
 import "./App.css";
 import logo from "./assets/Orion_brain.png";
@@ -13,8 +14,8 @@ const App = () => {
   const [areRulesOpen, setAreRulesOpen] = useState(false);
 
   function handleHelpModal(e) {
-    console.log(e.target.closest(`div`).id);
-    console.log(areRulesOpen);
+    // console.log(e.target.closest(`div`).id);
+    // console.log(areRulesOpen);
     if (!areRulesOpen && e.target.closest(`div`).id === `help-container`) {
       setAreRulesOpen(true);
       document
@@ -32,24 +33,26 @@ const App = () => {
   }
 
   useEffect(() => {
+    console.log(`modal useEffect`);
     document.addEventListener("click", handleHelpModal);
   }, [areRulesOpen]);
 
-  useEffect(() => {
-    if (score > highScore) {
-      setHighScore(score);
-    }
-    if (isGameOver) {
-      setScore(0);
-      setIsGameOver(false);
-      setClickedArray([]);
-    }
-    if (score === 16) {
-      alert(`congrats, you must be one of those techie thingies yourself.`);
-      setScore(0);
-      setClickedArray([]);
-    }
-  }, [score, isGameOver, highScore]);
+  // useEffect(() => {
+  //   console.log(`game useEffect`);
+  //   if (score > highScore) {
+  //     setHighScore(score);
+  //   }
+  //   if (isGameOver) {
+  //     setScore(0);
+  //     setIsGameOver(false);
+  //     setClickedArray([]);
+  //   }
+  //   if (score === 16) {
+  //     alert(`congrats, you must be one of those techie thingies yourself.`);
+  //     setScore(0);
+  //     setClickedArray([]);
+  //   }
+  // }, [score, isGameOver, highScore]);
 
   return (
     <div id="app-container">
@@ -88,14 +91,22 @@ const App = () => {
           ></Scoreboard>
         </div>
       </header>
-      <Game
+      {/* <Game
         score={score}
         setScore={setScore}
         clickedArray={clickedArray}
         setClickedArray={setClickedArray}
         isGameOver={isGameOver}
         setIsGameOver={setIsGameOver}
-      ></Game>
+      ></Game> */}
+      <GameRefactor
+        score={score}
+        setScore={setScore}
+        clickedArray={clickedArray}
+        setClickedArray={setClickedArray}
+        isGameOver={isGameOver}
+        setIsGameOver={setIsGameOver}
+      ></GameRefactor>
     </div>
   );
 };

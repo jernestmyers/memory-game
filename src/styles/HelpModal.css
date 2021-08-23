@@ -21,7 +21,7 @@
   text-align: center;
 }
 
-.modal-btn {
+/* .modal-btn {
   background-color: #f2869f;
   color: white;
   font-weight: bold;
@@ -36,7 +36,7 @@
 
 .modal-btn:active {
   background-color: #4a2040;
-}
+} */
 
 ul,
 li {
@@ -47,4 +47,9 @@ li {
 li {
   list-style: none;
   padding: 0.5rem 0rem;
+}
+
+#click-continue-msg {
+  font-weight: bolder;
+  color: #4a2040;
 }
