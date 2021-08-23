@@ -86,9 +86,13 @@ svg {
   width: var(--image-width);
 }
 
+.icon-btns:hover {
+  background-color: #f9c9d4;
+}
+
 #help-icon {
-  height: 15px;
-  width: 15px;
+  height: 18px;
+  width: 18px;
   padding-right: 0.25rem;
 }
 

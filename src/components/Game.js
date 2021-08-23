@@ -166,6 +166,7 @@ const Game = (props) => {
         return (
           <div className="images" key={index}>
             <button
+              className="icon-btns"
               onClick={(e) => {
                 const btnID = e.target.closest(`svg`).id;
                 if (props.clickedArray.includes(btnID)) {

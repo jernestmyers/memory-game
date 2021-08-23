@@ -12,25 +12,28 @@ const App = () => {
   const [isGameOver, setIsGameOver] = useState(false);
   const [areRulesOpen, setAreRulesOpen] = useState(false);
 
+  function handleHelpModal(e) {
+    console.log(e.target.closest(`div`).id);
+    console.log(areRulesOpen);
+    if (!areRulesOpen && e.target.closest(`div`).id === `help-container`) {
+      setAreRulesOpen(true);
+      document
+        .querySelector(`#help-modal-container`)
+        .classList.remove(`toggle-modal`);
+      return document.removeEventListener("click", handleHelpModal);
+    }
+    if (areRulesOpen) {
+      setAreRulesOpen(false);
+      document
+        .querySelector(`#help-modal-container`)
+        .classList.add(`toggle-modal`);
+      return document.removeEventListener("click", handleHelpModal);
+    }
+  }
+
   useEffect(() => {
     document.addEventListener("click", handleHelpModal);
-    function handleHelpModal(e) {
-      console.log(e.target.closest(`div`).id);
-      if (!areRulesOpen && e.target.closest(`div`).id === `help-container`) {
-        setAreRulesOpen(true);
-        document
-          .querySelector(`#help-modal-container`)
-          .classList.add(`toggle-modal`);
-      }
-      if (areRulesOpen) {
-        setAreRulesOpen(false);
-        document
-          .querySelector(`#help-modal-container`)
-          .classList.add(`toggle-modal`);
-      }
-    }
-    return document.removeEventListener("click", handleHelpModal);
-  });
+  }, [areRulesOpen]);
 
   useEffect(() => {
     if (score > highScore) {
