@@ -37,22 +37,22 @@ const App = () => {
     document.addEventListener("click", handleHelpModal);
   }, [areRulesOpen]);
 
-  // useEffect(() => {
-  //   console.log(`game useEffect`);
-  //   if (score > highScore) {
-  //     setHighScore(score);
-  //   }
-  //   if (isGameOver) {
-  //     setScore(0);
-  //     setIsGameOver(false);
-  //     setClickedArray([]);
-  //   }
-  //   if (score === 16) {
-  //     alert(`congrats, you must be one of those techie thingies yourself.`);
-  //     setScore(0);
-  //     setClickedArray([]);
-  //   }
-  // }, [score, isGameOver, highScore]);
+  useEffect(() => {
+    console.log(`game useEffect`);
+    if (score > highScore) {
+      setHighScore(score);
+    }
+    if (isGameOver) {
+      setScore(0);
+      setIsGameOver(false);
+      setClickedArray([]);
+    }
+    if (score === 16) {
+      alert(`congrats, you must be one of those techie thingies yourself.`);
+      setScore(0);
+      setClickedArray([]);
+    }
+  }, [score, isGameOver, highScore]);
 
   return (
     <div id="app-container">

@@ -51,5 +51,6 @@ li {
 
 #click-continue-msg {
   font-weight: bolder;
-  color: #4a2040;
+  color: #cf7397;
+  text-decoration: underline;
 }

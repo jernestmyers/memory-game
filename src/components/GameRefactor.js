@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 const GameRefactor = (props) => {
   const [iconArray, setIconArray] = useState([
@@ -166,47 +166,29 @@ const GameRefactor = (props) => {
 
   useEffect(() => {
     randomizeIconArray();
-    console.log(`gameRefactor useEffect`);
-    document.querySelectorAll(`.icon-btns`).forEach((btn) => {
-      btn.addEventListener(`click`, randomizeIconArray);
-    });
   }, []);
 
-  //   useEffect(() => {
-  //     const handleGamePlay = (e) => {
-  //       console.log(`click handleGamePlay`);
-  //       const btnID = e.target.closest(`svg`).id;
-  //       if (props.clickedArray.includes(btnID)) {
-  //         alert(`game over. you got ${props.score} / 16`);
-  //         props.setIsGameOver(true);
-  //       } else {
-  //         props.setClickedArray(props.clickedArray.concat(btnID));
-  //         props.setScore(props.score + 1);
-  //       }
-  //     };
-  //     document.querySelectorAll(`.icon-btns`).forEach((btn) => {
-  //       btn.addEventListener(`click`, handleGamePlay);
-  //     });
-  //   }, [iconArray]);
+  const handleGamePlay = useCallback(
+    (e) => {
+      const btnID = e.target.closest(`svg`).id;
+      if (props.clickedArray.includes(btnID)) {
+        alert(`game over. you got ${props.score} / 16`);
+        props.setIsGameOver(true);
+      } else {
+        props.setClickedArray(props.clickedArray.concat(btnID));
+        props.setScore(props.score + 1);
+      }
+      randomizeIconArray();
+    },
+    [props]
+  );
 
   return (
     <div id="image-container">
       {iconArray.map((svg, index) => {
         return (
           <div className="images" key={index}>
-            <button
-              className="icon-btns"
-              //   onClick={handleGamePlay}
-              // const btnID = e.target.closest(`svg`).id;
-              // if (props.clickedArray.includes(btnID)) {
-              //   alert(`game over. you got ${props.score} / 16`);
-              //   props.setIsGameOver(true);
-              // } else {
-              //   props.setClickedArray(props.clickedArray.concat(btnID));
-              //   props.setScore(props.score + 1);
-              // }
-              // randomizeIconArray();
-            >
+            <button className="icon-btns" onClick={handleGamePlay}>
               {svg}
             </button>
           </div>
