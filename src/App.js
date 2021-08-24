@@ -5,7 +5,6 @@ import Game from "./components/Game";
 import HelpModal from "./components/HelpModal";
 import GameOverModal from "./components/GameOverModal";
 import "./App.css";
-import "./styles/Modal.css";
 import logo from "./assets/Orion_brain.png";
 
 const App = () => {
