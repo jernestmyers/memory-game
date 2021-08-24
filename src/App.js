@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Scoreboard from "./components/Scoreboard";
 import Footer from "./components/Footer";
-import GameRefactor from "./components/GameRefactor";
+import Game from "./components/Game";
 import HelpModal from "./components/HelpModal";
 import GameOverModal from "./components/GameOverModal";
 import "./App.css";
@@ -38,7 +38,7 @@ const App = () => {
     if (winScenario === `perfect`) {
       document.querySelector(
         `#gameover-msg`
-      ).textContent = `Perfect score! You must be a techie somebody.`;
+      ).textContent = `Perfect score! You must be a techie.`;
     } else {
       document.querySelector(
         `#gameover-msg`
@@ -113,14 +113,14 @@ const App = () => {
           ></Scoreboard>
         </div>
       </header>
-      <GameRefactor
+      <Game
         score={score}
         setScore={setScore}
         clickedArray={clickedArray}
         setClickedArray={setClickedArray}
         isGameOver={isGameOver}
         setIsGameOver={setIsGameOver}
-      ></GameRefactor>
+      ></Game>
       <Footer></Footer>
       <GameOverModal></GameOverModal>
     </div>

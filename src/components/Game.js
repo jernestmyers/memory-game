@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 
-const GameRefactor = (props) => {
+const Game = (props) => {
   const [iconArray, setIconArray] = useState([
     <svg
       className="svg-btn"
@@ -196,4 +196,4 @@ const GameRefactor = (props) => {
   );
 };
 
-export default GameRefactor;
+export default Game;
