@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+// import ReactDOM from "react-dom";
 import Scoreboard from "./components/Scoreboard";
 import Footer from "./components/Footer";
 import Game from "./components/Game";
@@ -126,5 +127,7 @@ const App = () => {
     </div>
   );
 };
+
+// ReactDOM.render(<GameOverModal />, document.querySelector(`#root`));
 
 export default App;
