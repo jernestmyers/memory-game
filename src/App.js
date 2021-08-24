@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Scoreboard from "./components/Scoreboard";
+import Footer from "./components/Footer";
 import Game from "./components/Game";
 import GameRefactor from "./components/GameRefactor";
 import HelpModal from "./components/HelpModal";
@@ -134,6 +135,7 @@ const App = () => {
         isGameOver={isGameOver}
         setIsGameOver={setIsGameOver}
       ></GameRefactor>
+      <Footer></Footer>
       <GameOverModal></GameOverModal>
     </div>
   );

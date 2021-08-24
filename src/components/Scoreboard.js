@@ -4,7 +4,7 @@ import "../styles/Scoreboard.css";
 const Scoreboard = (props) => {
   return (
     <div id="scoreboard-container">
-      <h2>Scoreboard</h2>
+      <h2 id="scoreboard-title">Scoreboard</h2>
       <div className="display-score">
         <h4>Current:</h4>
         <h4>{props.currentScore} / 16</h4>

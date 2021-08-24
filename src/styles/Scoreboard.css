@@ -8,3 +8,9 @@
   width: 135px;
   justify-content: space-between;
 }
+
+#scoreboard-title {
+  text-decoration: underline;
+  padding-bottom: 0.25rem;
+  color: #cf7397;
+}
