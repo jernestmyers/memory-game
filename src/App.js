@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Scoreboard from "./components/Scoreboard";
 import Footer from "./components/Footer";
-import Game from "./components/Game";
 import GameRefactor from "./components/GameRefactor";
 import HelpModal from "./components/HelpModal";
 import GameOverModal from "./components/GameOverModal";
@@ -69,16 +68,11 @@ const App = () => {
       setHighScore(score);
     }
     if (isGameOver) {
-      // setScore(0);
-      // setClickedArray([]);
       handleGameOver(`default`);
       setIsGameOver(false);
     }
     if (score === 16) {
       handleGameOver(`perfect`);
-      // alert(`congrats, you must be one of those techie thingies yourself.`);
-      // setScore(0);
-      // setClickedArray([]);
     }
   }, [score, isGameOver, highScore]);
 
@@ -119,14 +113,6 @@ const App = () => {
           ></Scoreboard>
         </div>
       </header>
-      {/* <Game
-        score={score}
-        setScore={setScore}
-        clickedArray={clickedArray}
-        setClickedArray={setClickedArray}
-        isGameOver={isGameOver}
-        setIsGameOver={setIsGameOver}
-      ></Game> */}
       <GameRefactor
         score={score}
         setScore={setScore}

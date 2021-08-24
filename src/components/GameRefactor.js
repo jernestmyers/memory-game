@@ -153,7 +153,6 @@ const GameRefactor = (props) => {
   ]);
 
   const randomizeIconArray = () => {
-    // console.log(`invoked randomizeImageArray`);
     const originalIconArray = iconArray.map((icon) => icon);
     const newIconArray = [];
     while (originalIconArray.length) {
@@ -172,7 +171,6 @@ const GameRefactor = (props) => {
     (e) => {
       const btnID = e.target.closest(`svg`).id;
       if (props.clickedArray.includes(btnID)) {
-        // alert(`game over. you got ${props.score} / 16`);
         props.setIsGameOver(true);
       } else {
         props.setClickedArray(props.clickedArray.concat(btnID));

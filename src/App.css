@@ -78,17 +78,10 @@ header {
   display: grid;
   width: calc(var(--image-width) * 5.5);
   height: calc(var(--image-width) * 5.5);
-  /* width: auto; */
-  /* height: auto; */
   grid-template-columns: repeat(4, var(--image-width));
   grid-template-rows: repeat(4, var(--image-width));
   column-gap: calc(var(--image-width) / 2);
   row-gap: calc(var(--image-width) / 2);
-}
-
-.images {
-  /* width: auto; */
-  /* height: auto; */
 }
 
 svg {
