@@ -1,4 +1,4 @@
-import "../styles/HelpModal.css";
+import "../styles/Modal.css";
 
 const HelpModal = (props) => {
   return (

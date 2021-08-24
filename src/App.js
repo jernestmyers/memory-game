@@ -3,6 +3,7 @@ import Scoreboard from "./components/Scoreboard";
 import Game from "./components/Game";
 import GameRefactor from "./components/GameRefactor";
 import HelpModal from "./components/HelpModal";
+import GameOverModal from "./components/GameOverModal";
 import "./App.css";
 import logo from "./assets/Orion_brain.png";
 
@@ -14,8 +15,6 @@ const App = () => {
   const [areRulesOpen, setAreRulesOpen] = useState(false);
 
   function handleHelpModal(e) {
-    // console.log(e.target.closest(`div`).id);
-    // console.log(areRulesOpen);
     if (!areRulesOpen && e.target.closest(`div`).id === `help-container`) {
       setAreRulesOpen(true);
       document
@@ -32,25 +31,53 @@ const App = () => {
     }
   }
 
+  function handleGameOver(winScenario) {
+    document
+      .querySelector(`#gameover-modal-container`)
+      .classList.remove(`toggle-modal`);
+    if (winScenario === `perfect`) {
+      document.querySelector(
+        `#gameover-msg`
+      ).textContent = `Perfect score! You must be a techie somebody.`;
+    } else {
+      document.querySelector(
+        `#gameover-msg`
+      ).textContent = `You got ${score} / 16!`;
+    }
+    setScore(0);
+    setClickedArray([]);
+    document.addEventListener(`click`, closeModal);
+  }
+
+  function closeModal(e) {
+    document
+      .querySelector(`#gameover-modal-container`)
+      .classList.add(`toggle-modal`);
+    document.querySelector(`#gameover-msg`).textContent = ``;
+    if (e) {
+      document.removeEventListener(`click`, closeModal);
+    }
+  }
+
   useEffect(() => {
-    console.log(`modal useEffect`);
     document.addEventListener("click", handleHelpModal);
   }, [areRulesOpen]);
 
   useEffect(() => {
-    console.log(`game useEffect`);
     if (score > highScore) {
       setHighScore(score);
     }
     if (isGameOver) {
-      setScore(0);
+      // setScore(0);
+      // setClickedArray([]);
+      handleGameOver(`default`);
       setIsGameOver(false);
-      setClickedArray([]);
     }
     if (score === 16) {
-      alert(`congrats, you must be one of those techie thingies yourself.`);
-      setScore(0);
-      setClickedArray([]);
+      handleGameOver(`perfect`);
+      // alert(`congrats, you must be one of those techie thingies yourself.`);
+      // setScore(0);
+      // setClickedArray([]);
     }
   }, [score, isGameOver, highScore]);
 
@@ -107,6 +134,7 @@ const App = () => {
         isGameOver={isGameOver}
         setIsGameOver={setIsGameOver}
       ></GameRefactor>
+      <GameOverModal></GameOverModal>
     </div>
   );
 };

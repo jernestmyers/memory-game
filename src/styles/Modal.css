@@ -1,0 +1,63 @@
+#help-modal-container,
+#gameover-modal-container {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: 1.5rem;
+  width: 300px;
+  overflow: auto;
+  background-color: #fdebef;
+}
+
+#gameover-modal-container {
+  position: fixed;
+  cursor: default;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#help-modal-content,
+#gameover-modal-content {
+  opacity: 95%;
+  margin: 0 auto;
+  padding: 0.5rem;
+  width: 250px;
+  max-width: 100%;
+  background-color: #fdebef;
+}
+
+#gameover-modal-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  margin: 15% auto;
+  height: 150px;
+  width: 300px;
+  max-width: 100%;
+  border-radius: 0.5rem;
+}
+
+#help-modal-btn-container,
+#modal-header {
+  text-align: center;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+  padding: 0.5rem 0rem;
+}
+
+#click-continue-msg {
+  font-weight: bolder;
+  color: #cf7397;
+  text-decoration: underline;
+}
