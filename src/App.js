@@ -7,35 +7,37 @@ import HelpModal from "./components/HelpModal";
 import GameOverModal from "./components/GameOverModal";
 import "./App.css";
 import logo from "./assets/Orion_brain.png";
+import useModal from "./components/useModal";
 
 const App = () => {
   const [score, setScore] = useState(0);
   const [clickedArray, setClickedArray] = useState([]);
   const [highScore, setHighScore] = useState(0);
   const [isGameOver, setIsGameOver] = useState(false);
-  const [areRulesOpen, setAreRulesOpen] = useState(false);
+  const { open, openModal, closeModal } = useModal();
+  // const [areRulesOpen, setAreRulesOpen] = useState(false);
 
-  function handleHelpModal(e) {
-    if (!areRulesOpen && e.target.closest(`div`).id === `help-container`) {
-      setAreRulesOpen(true);
-      document
-        .querySelector(`#help-modal-container`)
-        .classList.remove(`toggle-modal`);
-      return document.removeEventListener("click", handleHelpModal);
-    }
-    if (areRulesOpen) {
-      setAreRulesOpen(false);
-      document
-        .querySelector(`#help-modal-container`)
-        .classList.add(`toggle-modal`);
-      return document.removeEventListener("click", handleHelpModal);
-    }
-  }
+  // function handleHelpModal(e) {
+  //   if (!areRulesOpen && e.target.closest(`div`).id === `help-container`) {
+  //     setAreRulesOpen(true);
+  //     document
+  //       .querySelector(`#help-modal-container`)
+  //       .classList.remove(`toggle-modal`);
+  //     return document.removeEventListener("click", handleHelpModal);
+  //   }
+  //   if (areRulesOpen) {
+  //     setAreRulesOpen(false);
+  //     document
+  //       .querySelector(`#help-modal-container`)
+  //       .classList.add(`toggle-modal`);
+  //     return document.removeEventListener("click", handleHelpModal);
+  //   }
+  // }
 
   function handleGameOver(winScenario) {
-    document
-      .querySelector(`#gameover-modal-container`)
-      .classList.remove(`toggle-modal`);
+    // document
+    //   .querySelector(`#gameover-modal-container`)
+    //   .classList.remove(`toggle-modal`);
     if (winScenario === `perfect`) {
       document.querySelector(
         `#gameover-msg`
@@ -47,22 +49,23 @@ const App = () => {
     }
     setScore(0);
     setClickedArray([]);
-    document.addEventListener(`click`, closeModal);
+    document.addEventListener(`click`, closeGameOverModal);
   }
 
-  function closeModal(e) {
-    document
-      .querySelector(`#gameover-modal-container`)
-      .classList.add(`toggle-modal`);
-    document.querySelector(`#gameover-msg`).textContent = ``;
+  function closeGameOverModal(e) {
+    // document
+    //   .querySelector(`#gameover-modal-container`)
+    //   .classList.add(`toggle-modal`);
+    // document.querySelector(`#gameover-msg`).textContent = ``;
     if (e) {
-      document.removeEventListener(`click`, closeModal);
+      document.removeEventListener(`click`, closeGameOverModal);
     }
+    setIsGameOver(false);
   }
 
-  useEffect(() => {
-    document.addEventListener("click", handleHelpModal);
-  }, [areRulesOpen]);
+  // useEffect(() => {
+  //   document.addEventListener("click", handleHelpModal);
+  // }, [areRulesOpen]);
 
   useEffect(() => {
     if (score > highScore) {
@@ -70,7 +73,7 @@ const App = () => {
     }
     if (isGameOver) {
       handleGameOver(`default`);
-      setIsGameOver(false);
+      // setIsGameOver(false);
     }
     if (score === 16) {
       handleGameOver(`perfect`);
@@ -84,7 +87,7 @@ const App = () => {
           <img id="logo" alt="brain" src={logo}></img>
           <h2 id="page-title">Techie Thingies</h2>
           <h3 id="page-subtitle">A memory game</h3>
-          <div id="help-container">
+          <div onClick={openModal} id="help-container">
             <svg
               id="help-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -103,8 +106,8 @@ const App = () => {
               <line x1="12" y1="8" x2="12.01" y2="8"></line>
             </svg>
             <h4>Click to see the rules</h4>
-            <HelpModal></HelpModal>
           </div>
+          {open ? <HelpModal close={closeModal} /> : null}
         </div>
         <div id="header-right">
           <Scoreboard
@@ -123,11 +126,9 @@ const App = () => {
         setIsGameOver={setIsGameOver}
       ></Game>
       <Footer></Footer>
-      <GameOverModal></GameOverModal>
+      {isGameOver ? <GameOverModal close={closeModal}></GameOverModal> : null}
     </div>
   );
 };
-
-// ReactDOM.render(<GameOverModal />, document.querySelector(`#root`));
 
 export default App;
