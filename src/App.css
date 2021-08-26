@@ -2,10 +2,12 @@ html {
   --image-width: 5rem;
   --image-height: var(--image-width);
   height: 100%;
+  width: 100%;
 }
 
 body,
 #root {
+  width: 100%;
   height: 100%;
 }
 

@@ -2,7 +2,7 @@ import React from "react";
 import Portal from "./Portal";
 import "../styles/Modal.css";
 
-const HelpModal = ({ children, close, render }) => {
+const HelpModal = ({ close }) => {
   return (
     <Portal>
       <div id="help-modal-container">
@@ -13,10 +13,9 @@ const HelpModal = ({ children, close, render }) => {
             <li>Are you clever enough to click all 16 icons?</li>
           </ul>
           <div id="help-modal-btn-container">
-            {/* <small id="click-continue-msg">CLICK ANYWHERE TO CONTINUE</small> */}
-            {/* {render(children) || children} */}
-            {/* <hr /> */}
-            <button onClick={close}>Close</button>
+            <button className="modal-btn" onClick={close}>
+              CLOSE
+            </button>
           </div>
         </div>
       </div>

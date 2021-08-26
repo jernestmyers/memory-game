@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import ReactDOM from "react-dom";
 import Scoreboard from "./components/Scoreboard";
 import Footer from "./components/Footer";
 import Game from "./components/Game";
@@ -15,68 +14,13 @@ const App = () => {
   const [highScore, setHighScore] = useState(0);
   const [isGameOver, setIsGameOver] = useState(false);
   const { open, openModal, closeModal } = useModal();
-  // const [areRulesOpen, setAreRulesOpen] = useState(false);
-
-  // function handleHelpModal(e) {
-  //   if (!areRulesOpen && e.target.closest(`div`).id === `help-container`) {
-  //     setAreRulesOpen(true);
-  //     document
-  //       .querySelector(`#help-modal-container`)
-  //       .classList.remove(`toggle-modal`);
-  //     return document.removeEventListener("click", handleHelpModal);
-  //   }
-  //   if (areRulesOpen) {
-  //     setAreRulesOpen(false);
-  //     document
-  //       .querySelector(`#help-modal-container`)
-  //       .classList.add(`toggle-modal`);
-  //     return document.removeEventListener("click", handleHelpModal);
-  //   }
-  // }
-
-  function handleGameOver(winScenario) {
-    // document
-    //   .querySelector(`#gameover-modal-container`)
-    //   .classList.remove(`toggle-modal`);
-    if (winScenario === `perfect`) {
-      document.querySelector(
-        `#gameover-msg`
-      ).textContent = `Perfect score! You must be a techie.`;
-    } else {
-      document.querySelector(
-        `#gameover-msg`
-      ).textContent = `You got ${score} / 16!`;
-    }
-    setScore(0);
-    setClickedArray([]);
-    document.addEventListener(`click`, closeGameOverModal);
-  }
-
-  function closeGameOverModal(e) {
-    // document
-    //   .querySelector(`#gameover-modal-container`)
-    //   .classList.add(`toggle-modal`);
-    // document.querySelector(`#gameover-msg`).textContent = ``;
-    if (e) {
-      document.removeEventListener(`click`, closeGameOverModal);
-    }
-    setIsGameOver(false);
-  }
-
-  // useEffect(() => {
-  //   document.addEventListener("click", handleHelpModal);
-  // }, [areRulesOpen]);
 
   useEffect(() => {
     if (score > highScore) {
       setHighScore(score);
     }
-    if (isGameOver) {
-      handleGameOver(`default`);
-      // setIsGameOver(false);
-    }
     if (score === 16) {
-      handleGameOver(`perfect`);
+      setIsGameOver(true);
     }
   }, [score, isGameOver, highScore]);
 
@@ -126,7 +70,15 @@ const App = () => {
         setIsGameOver={setIsGameOver}
       ></Game>
       <Footer></Footer>
-      {isGameOver ? <GameOverModal close={closeModal}></GameOverModal> : null}
+      {isGameOver ? (
+        <GameOverModal
+          setScore={setScore}
+          setClickedArray={setClickedArray}
+          setIsGameOver={setIsGameOver}
+          score={score}
+          close={closeModal}
+        ></GameOverModal>
+      ) : null}
     </div>
   );
 };
