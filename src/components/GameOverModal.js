@@ -13,7 +13,7 @@ const GameOverModal = (props) => {
   return (
     <Portal>
       <div id="gameover-modal-container">
-        <div id="gameover-modal-content">
+        <div id="gameover-modal-content" style={{ opacity: "95%" }}>
           <h2 id="modal-header">Game Over</h2>
           <p id="gameover-msg">
             {props.score === 16

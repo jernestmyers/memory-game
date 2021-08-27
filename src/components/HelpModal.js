@@ -6,7 +6,7 @@ const HelpModal = ({ close }) => {
   return (
     <Portal>
       <div id="help-modal-container">
-        <div id="help-modal-content" style={{ color: "black", opacity: "95%" }}>
+        <div id="help-modal-content" style={{ opacity: "95%" }}>
           <h2 id="modal-header">How To Play</h2>
           <ul>
             <li>The goal is to click each icon only once.</li>
