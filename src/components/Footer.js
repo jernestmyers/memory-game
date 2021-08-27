@@ -3,7 +3,14 @@ import React from "react";
 export default function Footer() {
   return (
     <footer>
-      <h4 id="footer-msg">Visit my GitHub</h4>
+      <a
+        id="footer-link"
+        href="https://github.com/jernestmyers"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <h4 id="footer-msg">Visit my GitHub</h4>
+      </a>
       <a
         href="https://github.com/jernestmyers"
         target="_blank"

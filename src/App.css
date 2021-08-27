@@ -140,3 +140,20 @@ footer {
 #footer-msg {
   padding-bottom: 3px;
 }
+
+#footer-link {
+  text-decoration: none;
+}
+
+#footer-link:visited {
+  color: black;
+}
+
+#footer-link:hover {
+  text-decoration: underline;
+}
+
+#github-footer-icon:hover {
+  background-color: #f9c9d4;
+  border-radius: 50%;
+}
