@@ -157,3 +157,72 @@ footer {
   background-color: #f9c9d4;
   border-radius: 50%;
 }
+
+#footer-link,
+#footer-svg-link {
+  padding-top: 20px;
+}
+
+@media screen and (max-width: 450px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+  }
+
+  #header-left,
+  #header-right {
+    margin: 0;
+  }
+
+  #header-right {
+    margin-top: 0.25rem;
+  }
+
+  #image-container {
+    display: grid;
+    /* width: calc((var(--image-width) * 6.75) / 1.5); */
+    /* height: calc((var(--image-width) * 6.75) / 1.5); */
+    width: 17.08333333333rem;
+    height: 17.08333333333rem;
+    grid-template-columns: repeat(4, calc(var(--image-width) / 1.5));
+    grid-template-rows: repeat(4, calc(var(--image-width) / 1.5));
+    column-gap: calc(var(--image-width) / 4);
+    row-gap: calc(var(--image-width) / 4);
+  }
+
+  svg {
+    height: calc(var(--image-height) / 1.5);
+    width: calc(var(--image-width) / 1.5);
+  }
+
+  .icon-btns:hover {
+    background-color: none;
+  }
+
+  #help-container {
+    margin: 0;
+  }
+
+  #help-container:hover {
+    border: 0;
+  }
+
+  h2 {
+    font-size: 1.125rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  h4 {
+    font-size: 0.875rem;
+  }
+
+  #logo {
+    padding-right: 5px;
+    height: 54.4px;
+    width: 54.4px;
+  }
+}

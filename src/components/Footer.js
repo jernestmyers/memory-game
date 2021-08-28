@@ -12,6 +12,7 @@ export default function Footer() {
         <h4 id="footer-msg">Visit my GitHub</h4>
       </a>
       <a
+        id="footer-svg-link"
         href="https://github.com/jernestmyers"
         target="_blank"
         rel="noreferrer"

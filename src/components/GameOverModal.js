@@ -20,7 +20,11 @@ const GameOverModal = (props) => {
               ? `Perfect score! You must be a techie.`
               : `You got ${props.score} / 16!`}
           </p>
-          <button className="modal-btn" onClick={handleGameOverModal}>
+          <button
+            className="modal-btn"
+            id="play-again-btn"
+            onClick={handleGameOverModal}
+          >
             Play Again!
           </button>
         </div>

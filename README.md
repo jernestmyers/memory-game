@@ -32,7 +32,7 @@ this is the [second react project](https://www.theodinproject.com/paths/full-sta
 
 ## areas for improvement
 
-1. thus far has only been formatted to display effectively on my 13" macbook air.
+1. ~thus far has only been formatted to display effectively on my 13" macbook air.~
 2. the modals' style could be improved.
 3. i would prefer that the icons are not randomized upon the game's end. would require some tweaks to state management to achieve this.
 
