@@ -99,9 +99,9 @@ svg {
   margin: 0;
 }
 
-.icon-btns:hover {
+/* .icon-btns:hover {
   background-color: #f9c9d4;
-}
+} */
 
 #help-icon {
   height: 18px;
@@ -118,9 +118,9 @@ button {
   display: none;
 }
 
-#help-container:hover {
+/* #help-container:hover {
   border-bottom: 1px solid #cf7397;
-}
+} */
 
 footer {
   display: flex;
@@ -149,18 +149,37 @@ footer {
   color: black;
 }
 
-#footer-link:hover {
+/* #footer-link:hover {
   text-decoration: underline;
 }
 
 #github-footer-icon:hover {
   background-color: #f9c9d4;
   border-radius: 50%;
-}
+} */
 
 #footer-link,
 #footer-svg-link {
   padding-top: 20px;
+}
+
+@media (hover: hover) {
+  .icon-btns:hover {
+    background-color: #f9c9d4;
+  }
+
+  #help-container:hover {
+    border-bottom: 1px solid #cf7397;
+  }
+
+  #footer-link:hover {
+    text-decoration: underline;
+  }
+
+  #github-footer-icon:hover {
+    background-color: #f9c9d4;
+    border-radius: 50%;
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -181,8 +200,6 @@ footer {
 
   #image-container {
     display: grid;
-    /* width: calc((var(--image-width) * 6.75) / 1.5); */
-    /* height: calc((var(--image-width) * 6.75) / 1.5); */
     width: 17.08333333333rem;
     height: 17.08333333333rem;
     grid-template-columns: repeat(4, calc(var(--image-width) / 1.5));
@@ -196,17 +213,17 @@ footer {
     width: calc(var(--image-width) / 1.5);
   }
 
-  .icon-btns:hover {
+  /* .icon-btns:hover {
     background-color: none;
-  }
+  } */
 
   #help-container {
     margin: 0;
   }
 
-  #help-container:hover {
+  /* #help-container:hover {
     border: 0;
-  }
+  } */
 
   h2 {
     font-size: 1.125rem;
