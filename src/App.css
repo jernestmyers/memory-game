@@ -99,10 +99,6 @@ svg {
   margin: 0;
 }
 
-/* .icon-btns:hover {
-  background-color: #f9c9d4;
-} */
-
 #help-icon {
   height: 18px;
   width: 18px;
@@ -117,10 +113,6 @@ button {
 .toggle-modal {
   display: none;
 }
-
-/* #help-container:hover {
-  border-bottom: 1px solid #cf7397;
-} */
 
 footer {
   display: flex;
@@ -148,15 +140,6 @@ footer {
 #footer-link:visited {
   color: black;
 }
-
-/* #footer-link:hover {
-  text-decoration: underline;
-}
-
-#github-footer-icon:hover {
-  background-color: #f9c9d4;
-  border-radius: 50%;
-} */
 
 #footer-link,
 #footer-svg-link {
@@ -213,17 +196,9 @@ footer {
     width: calc(var(--image-width) / 1.5);
   }
 
-  /* .icon-btns:hover {
-    background-color: none;
-  } */
-
   #help-container {
     margin: 0;
   }
-
-  /* #help-container:hover {
-    border: 0;
-  } */
 
   h2 {
     font-size: 1.125rem;
