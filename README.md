@@ -4,6 +4,10 @@ this is the [second react project](https://www.theodinproject.com/paths/full-sta
 
 ![gif demonstrating the app's features](./memory-game-demo.gif)
 
+## live version
+
+[click here](https://jernestmyers.github.io/memory-game/) for a live version!
+
 ## how to play
 
 1. each click on an image will rearrange the images displayed.
@@ -35,7 +39,3 @@ this is the [second react project](https://www.theodinproject.com/paths/full-sta
 1. ~thus far has only been formatted to display effectively on my 13" macbook air.~
 2. the modals' style could be improved.
 3. i would prefer that the icons are not randomized upon the game's end. would require some tweaks to state management to achieve this.
-
-## live version
-
-[click here](https://jernestmyers.github.io/memory-game/) for a live version!
